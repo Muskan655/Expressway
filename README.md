@@ -1,4 +1,4 @@
-# Myntra Expressway – Smart Fashion Assistant 🚀
+# Myntra Expressway – Smart Event-Driven Fashion Assistant⚡
 
 
 **Myntra Expressway** is an **AI-powered fashion planner and shopping companion** designed to make dressing up smarter, cost-effective, and socially engaging.  
@@ -6,7 +6,7 @@ It combines **event-aware outfit recommendations, wardrobe intelligence, and col
 
 ---
 
-## Problem Customers Face🚨: 
+## ⏰Problem Customers Face: 
 
 Customers today face multiple challenges while shopping for fashion online:
 
@@ -16,7 +16,7 @@ Customers today face multiple challenges while shopping for fashion online:
 - **Wardrobe disconnect** – Shoppers often buy new clothes without reusing existing items, increasing cost and reducing affordability.  
 - **No social touch** – Online shopping lacks instant peer feedback, unlike offline shopping trips with friends and family.
 
-## 🔥 Features
+## 💡Features:
 
 ---
 
