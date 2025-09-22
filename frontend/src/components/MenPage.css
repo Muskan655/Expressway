@@ -1,0 +1,11 @@
+.card-holder {
+  margin-top: 5px;
+  padding: 15px;
+  margin-left: 20px;
+}
+.men-page-container{
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+
+}

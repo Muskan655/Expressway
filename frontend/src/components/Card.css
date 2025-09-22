@@ -1,0 +1,237 @@
+.card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.card.hovered {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+  width: 100%;
+  height: 200px; /* Reduced image container height */
+  overflow: hidden;
+  position: relative; 
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.3s ease; 
+}
+
+.card-content {
+  padding: 12px;
+}
+
+.product-name {
+  font-size: 1rem; /* Adjusted font size */
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.product-description {
+  font-size: 0.85rem; /* Adjusted font size */
+  color: #555;
+  margin: 6px 0; /* Adjusted margin */
+}
+
+.price-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 0.95rem; /* Adjusted font size */
+  color: #000;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.85rem; /* Adjusted font size */
+}
+
+.discount {
+  color: #ff905a; /* Orange color for discount */
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.rating-overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Re-enable and style hover-info and wishlist-button, add share-button styles */
+.hover-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Semi-transparent white background */
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transform: translateY(100%); /* Start below the card */
+  transition: transform 0.3s ease-out; /* Transition for sliding up */
+  box-sizing: border-box;
+}
+
+.card.hovered .hover-info {
+  transform: translateY(0); /* Slide up on hover */
+}
+
+.wishlist-button,
+.share-button {
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  width: 100%;
+  text-align: center;
+}
+
+.share-button {
+  background-color: #4caf50; /* Different color for share button */
+}
+
+/* Share modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.share-modal {
+  background: #fff;
+  width: 360px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  padding: 16px;
+}
+
+.modal-title {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.group-list {
+  max-height: 220px;
+  overflow-y: auto;
+  border: 1px solid #f0f2f5;
+  border-radius: 6px;
+}
+
+.group-list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #f0f2f5;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.group-list-item:last-child {
+  border-bottom: none;
+}
+.group-list-item.selected {
+  background: #e8f4fd;
+  color: #ff3f6c;
+  font-weight: 500;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ff3f6c;
+  border-radius: 6px;
+  display: inline-block;
+  position: relative;
+  background: #fff;
+}
+.checkbox.checked {
+  background: #ff3f6c;
+}
+.checkbox.checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.group-name {
+  flex: 1;
+}
+
+.empty-groups {
+  padding: 12px;
+  text-align: center;
+  color: #666;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.btn-primary {
+  background: #ff3f6c;
+  color: #fff;
+}
+.btn-light {
+  background: #fff;
+  color: #333;
+  border-color: #ddd;
+}

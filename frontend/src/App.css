@@ -1,0 +1,70 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+}
+
+.App {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+}
+
+/* Top Bar */
+.top-bar {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navigation {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .search-container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .banner-right {
+    text-align: center;
+  }
+
+  .sponsor-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sponsor-item:not(:last-child)::after {
+    display: none;
+  }
+
+  .cashback-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}

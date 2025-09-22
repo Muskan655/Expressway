@@ -1,0 +1,20 @@
+{
+  "name": "shopping-chatroom",
+  "version": "1.0.0",
+  "description": "MVP chatroom with voting for shopping",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.3.1",
+    "socket.io": "^4.7.2",
+    "uuid": "^9.0.0"
+  }
+}

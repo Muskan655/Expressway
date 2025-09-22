@@ -1,0 +1,572 @@
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff416c, #ff4b2b);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff4b2b, #ff416c);
+}
+
+/* Glassy card hover */
+.glass-card {
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+/* Button hover gradients */
+.btn-glass {
+  background: linear-gradient(135deg, #ff3f6c, #ff734c);
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  border: none;
+}
+
+.btn-glass:hover {
+  background: linear-gradient(135deg, #ff734c, #ff3f6c);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.recommend-btn {
+  display: inline-flex;            /* fit content width */
+  justify-content: center;         /* center text horizontally */
+  align-items: center; 
+  margin:2px;
+  width:fit-content;            /* center text vertically */
+  padding: 12px 24px;              /* vertical + horizontal padding */
+  font-size: 20px;                 /* readable text */
+  font-weight: 600;                /* semi-bold */
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  width: auto;                      /* important: fit content */
+  min-width: 0;                     /* prevent stretching */
+  height: auto;                     /* auto height with padding */
+  white-space: nowrap;              /* prevent text wrap */
+}
+
+.recommend-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  background: linear-gradient(90deg, #ff4b2b, #ff416c);
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* top aligned */
+  padding-top: 72px; /* space from top */
+  overflow-y: auto; /* allow scrolling if modal is taller than viewport */
+  z-index: 50;
+}
+
+/* Wardrobe Matcher Modal Card */
+.wardrobe-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 24px;
+  width: 26rem; /* slightly wider */
+  max-height: 90vh; /* max height relative to viewport */
+  overflow-y: auto; /* scroll if content exceeds modal height */
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Close button */
+.wardrobe-card > button {
+  position: sticky;
+  top: 8px;
+  right: 8px;
+  z-index: 100;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #ff4b2b;
+  cursor: pointer;
+}
+
+/* Form inputs inside modal */
+.wardrobe-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wardrobe-card form input,
+.wardrobe-card form select {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  width: 100%;
+  box-sizing: border-box;
+  color: #111;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.wardrobe-card form input:focus,
+.wardrobe-card form select:focus {
+  outline: none;
+  border-color:  #ff4b2b;
+  box-shadow: 0 4px 12px rgba(255, 75, 43, 0.3);
+}
+
+/* Recommendation items container */
+.wardrobe-card .recommendations-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* more space between categories */
+}
+
+
+
+/* Category heading */
+.wardrobe-card h3 {
+  font-weight: 800; /* bold */
+  font-size: 1.7rem;
+  font-style: oblique;
+  text-transform: capitalize;
+  margin-bottom: 12px;
+
+}
+
+/* Container for items inside each category */
+.wardrobe-card .flex.flex-wrap.gap-4 {
+  display: flex;
+  flex-direction: column; /* single item per row */
+  gap: 24px; /* gap between items */
+}
+
+/* Individual outfit card */
+.wardrobe-card .outfit-card {
+  width: 100%; /* full width of modal */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  gap: 6px; /* space between image, brand, price */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+/* Image inside outfit card */
+.wardrobe-card .suggestion-image {
+  width: 220px; /* larger image */
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Go Back button */
+.go-back-btn {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 800;
+  font-size: 1.5rem;
+  font-style: oblique;
+  cursor: pointer;
+  margin-bottom: 12px;
+  background: rgba(255,255,255,0.2);
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.2s ease;
+}
+.go-back-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.wardrobe-card .outfit-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+/* Brand and price text */
+.wardrobe-card .outfit-card p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Gap between different items inside category */
+.wardrobe-card .flex.flex-wrap.gap-4 {
+  gap: 16px; /* slightly more space to avoid overlapping */
+}
+
+.wardrobe-title {
+  font-size: 2.2rem;        /* larger font */
+  font-weight: 800;
+  color:#ff4b2b;       /* bold */
+  font-style: oblique;    /* oblique style */
+}
+
+
+/* Events dropdown */
+/* Events dropdown container */
+.event-select-wrap {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+.event-select-row { display: inline-flex; gap: 8px; align-items: center; }
+.event-info-button.btn-compact { padding: 8px 12px; font-size: 13px; border-radius: 12px; }
+
+/* Dropdown input */
+.event-select {
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 2px solid transparent;
+  width: auto;
+  min-width: 160px;
+  max-width: 100%;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Focus + hover orange effect */
+.event-select:hover,
+.event-select:focus {
+  border: 2px solid #ff3f6c; /* Myntra orange-pink */
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(255, 63, 108, 0.35);
+  outline: none;
+}
+
+/* Popover for dropdown info/help */
+.dropdown-popover {
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 36px;
+  width: 240px;
+  z-index: 20;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 63, 108, 0.3);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  font-size: 0.85rem;
+  color: #333;
+  display: none;
+  animation: fadeIn 0.25s ease;
+}
+
+/* Show dropdown tooltip on hover */
+/* Shown via JS by adding .show */
+.dropdown-popover.show { display: block; }
+
+/* Add Event button (below Myntra Expressway title) */
+.add-event-btn {
+  margin-top: 18px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff3f6c, #ff734c);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.add-event-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(255, 63, 108, 0.4);
+}
+/* Event select box */
+
+/* Wrapper card for event selector */
+.inline-fit.glass-card {
+  border: 1px solid #ff4b2b; /* Myntra orange border */
+  box-shadow: 0 6px 20px rgba(255, 75, 43, 0.25); /* orange glow */
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Selected event chip */
+.event-chip { display: inline-block; margin-top: 10px; padding: 10px 14px; border-radius: 999px; background: #fff; border: 1px solid #ff4b2b; color: #333; font-weight: 800; cursor: pointer; box-shadow: 0 3px 10px rgba(0,0,0,0.08); font-size: 14px; }
+.event-chip:hover { background: #fff7f9; }
+
+/* Details card under chip */
+.event-details-card { margin-top: 8px; background: rgba(255, 255, 255, 0.97); border-radius: 12px; border: 1px solid #ff416c; box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25); padding: 12px; width: 240px; }
+
+/* Label */
+.event-select-wrap label {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ff4b2b; /* Myntra orange */
+  margin-bottom: 1px;
+  display: block;
+}
+
+/* Event list as buttons */
+.event-list { display: flex; flex-direction: column; gap: 8px; }
+.event-button { text-align: left; padding: 8px 12px; border-radius: 10px; background: rgba(255,255,255,0.95); border: none; color: #333; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+.event-button:hover { background: #fff; box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
+.event-button.active { outline: 2px solid #ff4b2b; }
+
+/* Hovered event details under heading */
+.event-details-panel { margin: 0 0 12px; padding: 10px 12px; border-radius: 12px; }
+.event-details-title { font-weight: 800; margin-bottom: 4px; }
+.event-details-row { font-size: 13px; color: #333; }
+.event-details-upcoming { margin-top: 4px; font-size: 12px; color: #16a34a; font-weight: 700; }
+
+.event-select {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ff4b2b; /* Myntra orange border */
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.event-select:focus {
+  outline: none;
+  border-color: #ff416c;
+  box-shadow: 0 0 8px rgba(255, 65, 108, 0.4);
+}
+
+/* Dropdown popover styling */
+.dropdown-popover {
+  margin-top: 8px;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 12px;
+  border: 1px solid #ff416c;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  padding: 14px 16px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #222;
+}
+
+/* Headings inside popover */
+.dropdown-popover strong {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #ff416c;
+}
+
+/* Labels inside popover */
+.dropdown-popover p {
+  margin: 2px 0;
+  font-size: 16px;
+  color: #444;
+}
+
+/* Upcoming event text */
+.dropdown-popover p.text-green-600 {
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+/* Subtle animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Inline-fit glass card */
+.inline-fit { display: inline-block; max-width: 100%; margin-top: 20px; margin-bottom: 28px; }
+
+/* Empty state button */
+.empty-btn { padding: 4px 8px; font-size: 11px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.35); background: rgba(255,255,255,0.25); color: #333; cursor: default; }
+
+/* Simple spacing utility */
+.section-gap { margin-bottom: 16px; }
+
+/* Empty state chip */
+.empty-chip { display: inline-block; padding: 4px 8px; border-radius: 999px; background: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.35); font-size: 12px; }
+
+.wardrobe-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+}
+
+/* Outfit cards */
+.outfit-card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 12px;
+  transition: all 0.3s ease;
+}
+
+.outfit-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+/* Image hover + wishlist overlay */
+.image-hover-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Tile image sizing */
+.tile-image-lg { width: 88px; height: 88px; }
+.tile-image-sm { width: 56px; height: 56px; }
+
+/* Trio layout inside an outfit card */
+.item-trio { display: grid; grid-template-columns: repeat(3, minmax(150px, 1fr)); gap: 5px; margin-bottom: 6px; }
+.item-cell { display: flex; flex-direction: column; gap: 4px; align-items: center; text-align: center; }
+/* Container keeps square ratio */
+.image-hover-container.trio-image { width: 100%; aspect-ratio: 1 / 1; }
+/* Image fills container without distortion */
+img.trio-image { width: 100%; height: 100%; object-fit: cover; }
+.item-cell p { margin: 0; }
+
+.wishlist-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.image-hover-container:hover .wishlist-overlay {
+  opacity: 1;
+}
+
+.wishlist-btn {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-weight: 700;
+  cursor: default;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  font-size: 11px;
+}
+
+/* Outfits grid and tiles */
+.outfits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.outfit-tile {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 6px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.outfit-tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+.complements-list { display: grid; grid-template-columns: repeat(2, max-content); gap: 8px 12px; }
+.complement-row p { margin: 0 0 4px 0; }
+
+/* Button sizes */
+.btn-compact { padding: 3px 8px; font-size: 11px; line-height: 1.1; border-radius: 10px; }
+.btn-medium { padding: 10px 16px; font-size: 13px; line-height: 1.2; border-radius: 12px; }
+.genai-btn { margin-top: 8px; align-self: flex-start; display: inline-flex; }
+
+/* Utilities */
+.name-ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.suggestion-image { width: 100%; height: 96px; }
+
+/* Compact form/card sizing */
+.compact-card { padding: 8px !important; }
+.event-form-compact { max-width: 220px; }
+
+/* Top-right wardrobe button (slightly below header) */
+.wardrobe-top-right { position: absolute; top: 112px; right: 12px; z-index: 9999; pointer-events: auto; padding: 12px 18px; border: none; background: linear-gradient(135deg, #ff3f6c, #ff734c); }
+.wardrobe-top-right:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(255, 63, 108, 0.4); }
+
+/* Gradient headings */
+.gradient-text {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* Classy title with back shadow */
+.heading-row { margin: 28px 0 16px; }
+.hero-title { font-size: 28px; font-weight: 900; letter-spacing: 0.3px; }
+.title-shadow { filter: drop-shadow(0 3px 8px rgba(0,0,0,0.25)); }
+.main-chip-row { margin: 8px 0 16px; }
+
+/* Brand logo */
+.logo-brand { display: flex; align-items: center; gap: 8px; }
+.logo-badge { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(90deg, #ff416c, #ff4b2b); color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.logo-text { padding: 40px 5px; font-weight: 900; font-size: 30px; font-style: oblique; background: linear-gradient(90deg, #ff416c, #ff4b2b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.title-only .logo-text { padding: 8px 5px; }
+
+/* Inputs/selects with default-like look */
+input, select {
+  border-radius: 8px;
+  padding: 6px 8px;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  color: #111;
+}
+
+input:focus, select:focus {
+  outline: auto;
+  border-color: #cbd5e1;
+  box-shadow: none;
+}
