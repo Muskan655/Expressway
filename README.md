@@ -100,7 +100,7 @@ The **Group Shopping** feature enables **social styling** for events.
 
 ```bash
 # Clone repository
-git clone https://github.com/Muskan655/myntra-expressway.git
+git clone https://github.com/Muskan655/Expressway
 cd myntra-expressway
 
 # Install backend dependencies
